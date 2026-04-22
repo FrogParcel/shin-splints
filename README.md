@@ -89,3 +89,17 @@ Follow these steps to set up the project locally:
 3. **Run the program:**
     ```bash
     python -m garmin_planner sampleInput.yaml
+
+## Running the Streamlit App (UI)
+
+You can also run the application as a web app using Streamlit.
+
+1. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the app:**
+   ```bash
+   streamlit run app.py
+   ```

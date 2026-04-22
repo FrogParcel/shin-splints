@@ -1,2 +1,3 @@
 PyYAML==6.0.2
 garminconnect==0.3.2
+streamlit

@@ -6,7 +6,7 @@ from garminconnect import Garmin
 from garmin_planner.__init__ import logger
 
 class Client(object):
-    def __init__(self, email, password, mfa_callback=None):
+    def __init__(self, email, password, mfa_callback=None, auto_login=True):
         self._email = email
         self._password = password
         
@@ -22,8 +22,9 @@ class Client(object):
         self._mfa_callback = mfa_callback or _default_mfa_callback
         self._api = Garmin(email, password, prompt_mfa=self._mfa_callback)
 
-        if not self.login():
-            raise Exception("Login failed")
+        if auto_login:
+            if not self.login():
+                raise Exception("Login failed")
      
     def getAllWorkouts(self) -> dict:
         return self._api.get_workouts()
