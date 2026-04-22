@@ -1,0 +1,185 @@
+settings:
+  deleteSameNameWorkout: true
+
+workouts:
+
+  w1:
+    - warmup: lap
+    - repeat(7):
+      - run: 60sec
+      - recovery: 90sec
+    - run: 60sec
+    - cooldown: 5min
+
+  w2:
+    - warmup: lap
+    - repeat(5):
+      - run: 90sec
+      - recovery: 120sec
+    - run: 90sec
+    - cooldown: 5min
+
+  w3:
+    - warmup: lap
+    - run: 90sec
+    - recovery: 90sec
+    - run: 3min
+    - recovery: 3min
+    - run: 90sec
+    - recovery: 90sec
+    - run: 3min
+    - cooldown: 5min
+
+  w4:
+    - warmup: lap
+    - run: 3min
+    - recovery: 90sec
+    - run: 5min
+    - recovery: 150sec
+    - run: 3min
+    - recovery: 90sec
+    - run: 5min
+    - cooldown: 5min
+
+  w5_1:
+    - warmup: lap
+    - run: 5min
+    - recovery: 3min
+    - run: 5min
+    - recovery: 3min
+    - run: 5min
+    - cooldown: 5min
+
+  w5_2:
+    - warmup: lap
+    - run: 8min
+    - recovery: 5min
+    - run: 8min
+    - cooldown: 5min
+
+  w5_3:
+    - warmup: lap
+    - run: 20min
+    - cooldown: 5min
+
+  w6_1:
+    - warmup: lap
+    - run: 5min
+    - recovery: 3min
+    - run: 8min
+    - recovery: 3min
+    - run: 5min
+    - cooldown: 5min
+
+  w6_2:
+    - warmup: lap
+    - run: 10min
+    - recovery: 3min
+    - run: 10min
+    - cooldown: 5min
+
+  w6_3:
+    - warmup: lap
+    - run: 25min
+    - cooldown: 5min
+
+  w7:
+    - warmup: lap
+    - run: 25min
+    - cooldown: 5min
+
+  w8:
+    - warmup: lap
+    - run: 28min
+    - cooldown: 5min
+
+  w9:
+    - warmup: lap
+    - run: 30min
+    - cooldown: 5min
+
+
+schedulePlan:
+  start_from: 2026-04-21
+  workouts:
+
+    # week 1
+    - w1
+    - rest
+    - w1
+    - rest
+    - w1
+    - rest
+    - rest
+
+    # week 2
+    - w2
+    - rest
+    - w2
+    - rest
+    - w2
+    - rest
+    - rest
+
+    # week 3
+    - w3
+    - rest
+    - w3
+    - rest
+    - w3
+    - rest
+    - rest
+
+    # week 4
+    - w4
+    - rest
+    - w4
+    - rest
+    - w4
+    - rest
+    - rest
+
+    # week 5
+    - w5_1
+    - rest
+    - w5_2
+    - rest
+    - w5_3
+    - rest
+    - rest
+
+    # week 6
+    - w6_1
+    - rest
+    - w6_2
+    - rest
+    - w6_3
+    - rest
+    - rest
+
+    # week 7
+    - w7
+    - rest
+    - w7
+    - rest
+    - w7
+    - rest
+    - rest
+
+    # week 8
+    - w8
+    - rest
+    - w8
+    - rest
+    - w8
+    - rest
+    - rest
+
+    # week 9
+    - w9
+    - rest
+    - w9
+    - rest
+    - w9
+    - rest
+    - rest

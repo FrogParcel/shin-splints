@@ -1,0 +1,26 @@
+settings:
+  deleteSameNameWorkout: true
+
+definitions:
+  GA: 6:35-7:00
+  Threshold: 5:20-5:45
+  VO2MaxP: 3:30-4:00
+
+workouts:
+  interval_Vo2Max:
+    - warmup: 15min @H(z2)
+    - repeat(8):
+      - run: 30sec @P($VO2MaxP) # can use definition here or raw value 3:30-4:00
+      - recovery: 1200m
+    - cooldown: 15min @H(z2)
+  ga_30min:
+    - warmup: lap
+    - run: 30min @H(z2)
+    - cooldown: lap
+
+schedulePlan:
+  start_from: 2026-01-02 # format YYYY-MM-DD
+  workouts:
+    - interval_Vo2Max   # will be scheduled on 2024-10-08
+    - ga_5k, ga_30min   # will both be scheduled on 2024-10-09
+    - rest              # if no "rest" workout found on garmin connect, skip this day
