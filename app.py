@@ -33,35 +33,37 @@ if not st.session_state.authenticated:
         st.text_input("Password", type="password", key="password")
         
         if st.button("Login"):
-            try:
-                # Create client and save to session state BEFORE login
-                client = Client(st.session_state.get("email", ""), 
-                                st.session_state.get("password", ""), 
-                                mfa_callback=my_mfa_callback, auto_login=False)
-                st.session_state.garmin_client = client
-                
-                if client.login():
-                    st.session_state.authenticated = True
-                    st.success("Login successful!")
-                    st.rerun()
-                else:
-                    st.error("Login failed")
-            except Exception as e:
-                st.error(f"Login error: {e}")
+            with st.spinner("Logging in..."):
+                try:
+                    # Create client and save to session state BEFORE login
+                    client = Client(st.session_state.get("email", ""), 
+                                    st.session_state.get("password", ""), 
+                                    mfa_callback=my_mfa_callback, auto_login=False)
+                    st.session_state.garmin_client = client
+                    
+                    if client.login():
+                        st.session_state.authenticated = True
+                        st.success("Login successful!")
+                        st.rerun()
+                    else:
+                        st.error("Login failed")
+                except Exception as e:
+                    st.error(f"Login error: {e}")
 
     elif st.session_state.login_state == 'mfa':
         st.header("MFA Verification")
         st.text_input("Enter MFA code", key="mfa_code")
         
         if st.button("Submit MFA"):
-            # The callback will now find the code in session_state and return it
-            if st.session_state.garmin_client.login():
-                st.session_state.authenticated = True
-                st.session_state.login_state = 'init'
-                st.success("Login successful!")
-                st.rerun()
-            else:
-                st.error("Login failed")
+            with st.spinner("Logging in..."):
+                # The callback will now find the code in session_state and return it
+                if st.session_state.garmin_client.login():
+                    st.session_state.authenticated = True
+                    st.session_state.login_state = 'init'
+                    st.success("Login successful!")
+                    st.rerun()
+                else:
+                    st.error("Login failed")
 
 # If authenticated, show training planner
 if st.session_state.authenticated:
