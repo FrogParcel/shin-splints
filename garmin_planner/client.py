@@ -40,6 +40,9 @@ class Client(object):
     def scheduleWorkout(self, id, date: str) -> bool:
         return self._api.schedule_workout(id, date)
 
+    def getActivities(self, start_date, end_date):
+        return self._api.get_activities_by_date(start_date.isoformat(), end_date.isoformat())
+
     def importWorkout(self, workoutJson) -> dict:
         resJson = self._api.upload_workout(workoutJson)
         logger.info(f"""Imported workout {resJson['workoutName']}""")

@@ -15,9 +15,9 @@ Garmin users would know how much of a pain in the A it is to create and manage w
 Your YAML configuration should include the following sections:
 
 1. **User Credentials**:
-   - create a `secrets.yaml` file in the `garmin_planner` folder and add your garmin connect credentials
+   - Create a `secrets.yaml` file in the `garmin_planner` folder (the same directory as `main.py`) and add your Garmin Connect credentials:
    - ```yaml 
-     email: "your@email.com"`
+     email: "your@email.com"
      password: "mySecretPassword"
      ```
 
@@ -89,3 +89,9 @@ Follow these steps to set up the project locally:
 3. **Run the program:**
     ```bash
     python -m garmin_planner sampleInput.yaml
+    ```
+
+4. **Summarize Activities:**
+    ```bash
+    python summarize_activities.py
+    ```
